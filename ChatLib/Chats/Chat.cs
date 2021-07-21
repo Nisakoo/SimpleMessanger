@@ -16,10 +16,12 @@ namespace ChatLib.Chats
 
             InitHub();
         }
+        
         public ObservableCollection<IMessage> GetHistory()
         {
             return history;
         }
+        
         public void SendMessage(string username, string content)
         {
             IMessage message = new Message
@@ -34,10 +36,12 @@ namespace ChatLib.Chats
             history.Add(message);
             hub.SendAsync("SendMessage", message.Sender.Name, message.Content);
         }
+        
         public void Start()
         {
             hub.StartAsync();
         }
+        
         private void ReceiveMessage(string username, string content)
         {
             IMessage message = new Message()
@@ -51,6 +55,7 @@ namespace ChatLib.Chats
 
             history.Add(message);
         }
+        
         private void InitHub()
         {
             hub = new HubConnectionBuilder()
