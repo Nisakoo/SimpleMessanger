@@ -29,12 +29,12 @@ namespace ChatLib.Chats
                 Content = content,
                 Sender = new User()
                 {
-                    Name = username
+                    Name = "You"
                 }
             };
 
             history.Add(message);
-            hub.SendAsync("SendMessage", message.Sender.Name, message.Content);
+            hub.SendAsync("SendMessage", username, content);
         }
         
         public void Start()
