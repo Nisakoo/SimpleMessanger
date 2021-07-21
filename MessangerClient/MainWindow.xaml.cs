@@ -11,6 +11,7 @@ namespace MessangerClient
     public partial class MainWindow : Window
     {
         IChat chat;
+        
         public MainWindow()
         {
             InitializeComponent();
