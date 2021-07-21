@@ -6,6 +6,7 @@ namespace ChatLib.Messages
     {
         public string Content { get; set; }
         public IUser Sender { get; init; }
+        
         public override string ToString()
         {
             return $"{Sender.Name}: {Content}";
