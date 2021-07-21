@@ -24,7 +24,7 @@ namespace ChatLib.Chats
         
         public void SendMessage(string username, string content)
         {
-            IMessage message = new Message
+            IMessage message = new Message()
             {
                 Content = content,
                 Sender = new User()
